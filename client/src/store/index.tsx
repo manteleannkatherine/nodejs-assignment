@@ -4,7 +4,7 @@ import { sumBy } from 'lodash';
 import { useState } from 'react';
 import create from 'zustand';
 import { persist } from 'zustand/middleware';
-import { GET_ORDERS } from '../quries/order.queries';
+import { GET_ORDERS } from '../queries/order.queries';
 
 export interface Product {
 	id: string;

@@ -1,7 +1,7 @@
 import { useQuery } from '@apollo/client';
 import React from 'react';
 import StoreGallery from '../../components/StoreGallery';
-import { GET_PRODUCTS } from '../../quries/product.queries';
+import { GET_PRODUCTS } from '../../queries/product.queries';
 
 const StoreFront: React.FC = ({ children }) => {
 	const { loading, error, data } = useQuery(GET_PRODUCTS);

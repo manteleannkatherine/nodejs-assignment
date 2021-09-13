@@ -5,7 +5,7 @@ import { HomeOutlined, ArrowRightOutlined } from '@ant-design/icons';
 import styled from 'styled-components';
 import { useHistory } from 'react-router';
 import { useMutation } from '@apollo/client';
-import { CREATE_ORDER } from '../../quries/order.queries';
+import { CREATE_ORDER } from '../../queries/order.queries';
 import { map } from 'lodash';
 import DeleteOutlined from '@ant-design/icons/lib/icons/DeleteOutlined';
 const Swal = require('sweetalert2');

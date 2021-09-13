@@ -1,6 +1,5 @@
 import './App.css';
 import 'antd/dist/antd.css';
-import CategoryForm from './screens/Category/category.form';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import {
@@ -33,9 +32,6 @@ function App() {
 						</Route>
 						<Route path="/orderHistory">
 							<OrderHistoryPage />
-						</Route>
-						<Route path="/administration/category" exact>
-							<CategoryForm />
 						</Route>
 					</Switch>
 				</AppLayout>

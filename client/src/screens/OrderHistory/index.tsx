@@ -3,7 +3,7 @@ import { useQuery } from '@apollo/client';
 import { Button, Table } from 'antd';
 import React from 'react';
 import { useHistory } from 'react-router';
-import { GET_ORDERS } from '../../quries/order.queries';
+import { GET_ORDERS } from '../../queries/order.queries';
 import useAppStore, { Order } from '../../store';
 
 const OrderHistoryPage: React.FC = () => {
