@@ -1,0 +1,60 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator typegraphql {
+  provider = "typegraphql-prisma"
+}
+
+model Product {
+  id            String     @id @default(uuid())
+  createdAt     DateTime   @default(now())
+  updatedAt     DateTime   @updatedAt
+  name          String
+  image         String
+  description   String?
+  quantity      Int
+  price         Float      @default(0.00)
+  orderDetails  OrderDetail[]
+}
+
+model Order {
+  id            String    @id @default(uuid())
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  customerId    Int?
+  customer      User?     @relation(fields: [customerId], references: [id])
+  orderDetails  OrderDetail[]
+}
+
+model OrderDetail {
+  id          String      @id @default(uuid())
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+  productId   String?
+  product     Product?    @relation(fields: [productId], references: [id])
+  orderId     String
+  order       Order?      @relation(fields: [orderId], references: [id])
+  quantity    Int?
+  totalPrice  Float      @default(0.00)
+}
+
+
+model User {
+  id          Int       @id @default(autoincrement())
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  email       String    @unique
+  firstName   String?
+  lastName    String?
+  address     String?
+  orders      Order[]
+}
