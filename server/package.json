@@ -6,7 +6,7 @@
 	"scripts": {
 		"dev": "ts-node-dev --respawn --transpile-only src/index.ts",
 		"start": "ts-node-dev --ignore client/ src/index.ts",
-		"seeding": "ts-node-dev seeding.ts"
+		"seeding": "ts-node-dev seeds.ts"
 	},
 	"dependencies": {
 		"@prisma/client": "3.0.2",

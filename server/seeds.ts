@@ -1,6 +1,7 @@
 import { PrismaClient, Product } from '@prisma/client';
 import axios from 'axios';
 import { each } from 'lodash';
+var faker = require('faker');
 
 const prisma = new PrismaClient();
 
@@ -26,17 +27,17 @@ const InitializeSeeding = async () => {
 			.catch((e) => console.log('error', e));
 	});
 
-	// // User Seeding
-	// for (let i = 0; i < 5; i++) {
-	// 	const user: any = {
-	// 		firstName: faker.name.firstName(),
-	// 		lastName: faker.name.lastName(),
-	// 		email: faker.internet.email(),
-	// 		address: faker.address.country(),
-	// 	};
+	// User Seeding
+	for (let i = 0; i < 5; i++) {
+		const user: any = {
+			firstName: faker.name.firstName(),
+			lastName: faker.name.lastName(),
+			email: faker.internet.email(),
+			address: faker.address.country(),
+		};
 
-	// 	await prisma.user.create({ data: user });
-	// }
+		await prisma.user.create({ data: user });
+	}
 
 	console.log('seeding completed....');
 };
