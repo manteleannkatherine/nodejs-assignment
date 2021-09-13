@@ -1,0 +1,32 @@
+{
+	"createOrderData": {
+		"customer": {
+			"connect": {
+				"id": 1
+			}
+		},
+		"orderDetails": {
+			"create":{
+        "product": {
+					"connect": {
+						"id": "968200e7-f651-42b6-b4df-94889ac6f67d"
+					}
+				},
+				"totalPrice": 99.50,
+				"quantity": 2
+      }
+		}
+	}
+}
+
+
+{
+  "createOrderDetailData": {
+    "product": {
+      "connect": {"id": "137ee1d5-97fb-41ec-9ec0-6e4b3b059590"}
+    },
+    "order":{
+      "create": {}
+    }
+  }
+}
