@@ -2,6 +2,41 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Install Dependencies
+
+In the project terminal, run:
+
+### `yarn add apollo-server graphql class-validator type-graphql reflect-metadata class-validator`
+
+### `yarn add -D typescript ts-node-dev ts-node @types/node @types/ws`
+	
+### `yarn add typegraphql-prisma graphql-type-json graphql-fields`
+	
+### `yarn add @types/lodash axios`
+
+## Initialize Prisma
+
+In the project terminal, run:
+
+### `npx prisma init`
+
+In `schema.prisma`, create your models.
+In `.env`, update `DATABASE_URL`. 
+
+## Migration
+
+In the project terminal, run:
+
+### `npx prisma db push`
+
+### `npx prisma generate`
+
+## Add data seeding
+
+In the project terminal, run:
+
+### `yarn seeding`
+
 ## Available Scripts
 
 In the project directory, you can run:
